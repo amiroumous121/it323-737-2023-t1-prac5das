@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  amir-app-instance-1:
+    build:
+      context: C:/Users/john3/Desktop/sadas
+      dockerfile: Dockerfile
+    container_name: amir-app-instance-1
+    networks:
+      - my_network
+
+  amir-app-instance-2:
+    build: .
+    image: amir-app
+    container_name: amir-app-instance-2
+    ports:
+      - "3041:3040"
+    networks:
+      - my_network
+
+networks:
+  my_network:
